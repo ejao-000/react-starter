@@ -15,7 +15,7 @@ export const seedTasks = [
   {
     id: 'task-2',
     title: 'Break the TaskFlow UI into components',
-    completed: false,
+    completed: true,
     priority: 'high',
     due: 'Today',
   },
@@ -33,4 +33,31 @@ export const seedTasks = [
     priority: 'low',
     due: 'Friday',
   },
+
+  {
+    id: 'task-5',
+    title: 'Bring out my creativity in designing the best websites',
+    completed: false,
+    priority:'high',
+    due:'December',
+
+  },
+
+  {
+    id: 'task-6',
+    title: 'Do forum audits',
+    completed: false,
+    priority: 'high',
+    due: 'Wednesday',
+
+  },
+
+  {
+    id: 'task-7',
+    title: 'Be happy',
+    completed: 'true',
+    priority: 'high',
+    due: 'Today',
+
+  }
 ]

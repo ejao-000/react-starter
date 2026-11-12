@@ -1,6 +1,11 @@
 import Header from './components/Header.jsx'
 import TaskList from './components/TaskList.jsx'
 import { seedTasks } from './data/seedTasks.js'
+import Greetings from './components/Greetings.jsx'
+import Stats from './components/Stats.jsx'
+import Footer from './components/Footer.jsx'
+import ProfileCard from './components/ProfileCard.jsx'
+import About from './components/About.jsx'
 
 /**
  * Week 1 starter.
@@ -13,33 +18,42 @@ export default function App() {
   const doneCount = seedTasks.length - openCount
 
   return (
+    
+
     <div className="app">
       <Header />
+
+      <div className="profile-layout">
+          
+      <Greetings name="Amara" role="Frontend learner"/>
+      <ProfileCard  
+        initials="A" 
+        name="Amara" 
+        role="Frontend learner" 
+        goal="Creative and reliable Web developer" 
+      >
+
+        <span className="pill">Open to internships</span>
+      </ProfileCard>
+      </div>
+ 
 
       <main className="main" id="tasks">
         <section className="hero">
           <p className="eyebrow">React · Week 1 starter</p>
-          <h1>Make room for what matters.</h1>
+          <h1>With Energy and Tenacity, we keep going</h1>
           <p className="lede">
             TaskFlow is a small task manager you will build across ten weeks.
             This starter is the static shell. By the end, it will be a routed,
             tested, deployed app — and you will ship a capstone of your own.
           </p>
 
-          <div className="stats" aria-label="Task summary">
-            <div className="stat">
-              <strong>{seedTasks.length}</strong>
-              <span>total</span>
-            </div>
-            <div className="stat">
-              <strong>{openCount}</strong>
-              <span>open</span>
-            </div>
-            <div className="stat">
-              <strong>{doneCount}</strong>
-              <span>done</span>
-            </div>
-          </div>
+        <Stats 
+          total={seedTasks.length}
+          open={openCount}
+          done={doneCount}
+          />
+       
         </section>
 
         <section className="panel" aria-labelledby="today-heading">
@@ -50,20 +64,21 @@ export default function App() {
             </div>
             <span className="pill">{openCount} open</span>
           </div>
-
-          <TaskList tasks={seedTasks} />
+        
+                 <TaskList tasks={seedTasks} />
+          
+          
 
           <p className="panel-note">
             Week 2 adds the form, toggles, and delete buttons. For now, read the
             code and make it yours.
           </p>
         </section>
-      </main>
 
-      <footer className="footer">
-        <p>Built while learning React. One project, ten weeks.</p>
-        <p className="footer-meta">React From Zero to Projects</p>
-      </footer>
+        <About />
+      </main>
+      
+      <Footer year={new Date().getFullYear()} />
     </div>
   )
 }
